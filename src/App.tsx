@@ -1,9 +1,12 @@
 import './App.scss'
+import { Puzzle } from './components/Puzzle'
+
 
 function App() {
 
   return (
     <>
+   <Puzzle />
     </>
   )
 }
