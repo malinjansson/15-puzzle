@@ -1,0 +1,21 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.shuffle-btn {
+    margin-top: 3rem;
+    background-color: v.$secondary-color;
+    color: v.$primary-color;
+    padding: 16px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: v.$primary-bg-color;
+    }
+}
