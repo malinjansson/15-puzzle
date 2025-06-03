@@ -1,0 +1,26 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.brick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 10px;
+    color: v.$primary-color;
+    background-color: v.$secondary-bg-color;
+
+    text-align: center;
+    width: 50px;
+    height: 50px;
+
+    @include m.forDesktop(desktop) {
+        width: 100px;
+        height: 100px;
+    }
+  }
+
+  .hidden-brick {
+    visibility: hidden;
+  }

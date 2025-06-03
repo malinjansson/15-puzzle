@@ -2,6 +2,7 @@ import { useState } from "react";
 import { gameBoard } from "../configs/gameBoard"
 import { Shuffle } from "./Shuffle";
 import { Brick } from "./Brick";
+import '../styles/_puzzle.scss'
 
 
 export const Puzzle = () => {
@@ -77,8 +78,7 @@ export const Puzzle = () => {
     <div className="game-container">
         <div className="game-board"
             style={{
-              display: "grid",
-              gridTemplateColumns: `repeat(${columns}, 50px)`,
+              gridTemplateColumns: `repeat(${columns}, 1fr)`,
             }}
         >
         {bricks.map((value, index) => (
