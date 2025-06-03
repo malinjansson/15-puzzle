@@ -90,8 +90,8 @@ export const Puzzle = () => {
           />
         ))}
       </div>
+      <button className="shuffle-btn" onClick={shuffleBricks}>Shuffle</button>
     </div>
-    <button onClick={shuffleBricks}>Shuffle</button>
     </>
   );
 };
