@@ -1,0 +1,12 @@
+@use "./styles/variables" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: v.$primary-font-family;
+    background-color: v.$secondary-bg-color;
+}
