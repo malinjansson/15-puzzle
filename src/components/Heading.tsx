@@ -4,6 +4,6 @@ type headingProps = {
 
 export const Heading = (props: headingProps) => {
     return (
-      <h2>{props.winStatus ? "Hurray! 🎉" : "Let's Play!"}</h2>
+      <h2>{props.winStatus ? "Hurray!" : "Let's Play!"}</h2>
       );
 }
