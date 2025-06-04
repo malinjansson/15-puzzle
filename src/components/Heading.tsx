@@ -1,5 +1,9 @@
-export const Heading = () => {
+type headingProps = {
+  winStatus: boolean;
+}
+
+export const Heading = (props: headingProps) => {
     return (
-        <h2>Let's puzzle!</h2>
+      <h2>{props.winStatus ? "Hurray! 🎉" : "Let's Play!"}</h2>
       );
 }
