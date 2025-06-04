@@ -1,5 +1,5 @@
 # 15-PUZZLE 🧩
-A fun and simpple sliding puzzle game built with React, TypeScript and SCSS.
+A fun and simple sliding puzzle game built with React, TypeScript and SCSS.
 
 [**TEST THE GAME HERE!**](https://15-puzzle-lime.vercel.app/)
 
