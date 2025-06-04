@@ -3,6 +3,8 @@ import { gameBoard } from "../configs/gameBoard"
 import { Shuffle } from "./Shuffle";
 import { Brick } from "./Brick";
 import '../styles/_puzzle.scss'
+import { Winner } from "./Winner";
+import { Heading } from "./Heading";
 
 
 export const Puzzle = () => {
@@ -13,6 +15,19 @@ export const Puzzle = () => {
     const initialBricks: number[] = [...Array.from({ length: totalBricks - 1 }, (_, i) => i + 1), 0];
 
     const [bricks, setBricks] = useState<number[]>(Shuffle(initialBricks));
+    const [winStatus, setWinStatus] = useState(false);
+
+    const checkWinStatus = (bricks: number[]) => {
+      const winStatus = bricks.every((value, index) => {
+        if (index === bricks.length - 1) {
+          return value === 0;
+        }
+        return value === index + 1;
+      });
+  
+      setWinStatus(winStatus);
+      return winStatus;
+    };
 
     const emptyIndex = bricks.indexOf(0);
     const indexToCoord = (index: number) => ({
@@ -66,15 +81,23 @@ export const Puzzle = () => {
          newBricks[coordToIndex(endRow, col)] = 0;
        }
      }
+     if (checkWinStatus(newBricks)) {
+      setWinStatus(true);     
+    }
       setBricks(newBricks);
    };
 
     const shuffleBricks = () => {
      setBricks(Shuffle(initialBricks));
+     setWinStatus(false);
    };
 
    return (
     <>
+    <Heading winStatus={winStatus}/>
+    <div className="win-container">
+    {winStatus && <Winner/>}
+    </div>
     <div className="game-container">
         <div className="game-board"
             style={{
@@ -90,7 +113,7 @@ export const Puzzle = () => {
           />
         ))}
       </div>
-      <button className="shuffle-btn" onClick={shuffleBricks}>Shuffle</button>
+      <button className="shuffle-btn" onClick={shuffleBricks}>{winStatus ? 'Play again!' : 'Shuffle'}</button>
     </div>
     </>
   );
