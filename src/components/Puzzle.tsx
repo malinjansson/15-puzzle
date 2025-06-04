@@ -95,9 +95,7 @@ export const Puzzle = () => {
    return (
     <>
     <Heading winStatus={winStatus}/>
-    <div className="win-container">
     {winStatus && <Winner/>}
-    </div>
     <div className="game-container">
         <div className="game-board"
             style={{
