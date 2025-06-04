@@ -1,0 +1,14 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.winner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    p {
+        font-size: 18px;
+        margin-top: 0.5rem;
+    }
+
+}
